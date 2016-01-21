@@ -13,13 +13,13 @@ public class DoorScript : MonoBehaviour {
     }
 
     void OnEnable() {
-        Messenger.AddListener(k_Messages.DoorDialog, EnableDialog);
-        //EventManager.StartListening(k_Messages.DoorDialog, EnableDialog);
+        //Messenger.AddListener(k_Messages.DoorDialog, EnableDialog);
+        EventManager.StartListening(k_Messages.DoorDialog, EnableDialog);
     }
 
     void OnDestroy() {
 //        Messenger.RemoveListener(k_Messages.DoorDialog, EnableDialog);
-        //EventManager.StopListening(k_Messages.DoorDialog, EnableDialog);
+        EventManager.StopListening(k_Messages.DoorDialog, EnableDialog);
     }
 
     void EnableDialog() {

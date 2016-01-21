@@ -7,7 +7,7 @@ public class Inventory : Singleton<Inventory> {
     Dictionary<string, float> inv;
     public float debt = 50000;
     public float oldDebt;
-    public float total;
+    public float total = 0;
 
     void Awake() {
         inv = new Dictionary<string, float>();
@@ -21,7 +21,6 @@ public class Inventory : Singleton<Inventory> {
     }
 
     public float CountValue() {
-        Debug.Log(total);
         return total;
     }
 

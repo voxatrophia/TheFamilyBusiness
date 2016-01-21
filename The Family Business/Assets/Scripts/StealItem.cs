@@ -5,22 +5,21 @@ public class StealItem : MonoBehaviour {
     bool select = false;
 
     void Update() {
-        select = Input.GetKeyDown(KeyCode.E);
+        select = Input.GetButtonDown("Select");
     }
 
     void OnTriggerStay2D(Collider2D other) {
-        if (other.CompareTag("Item")) {
+        if (other.CompareTag("Player")) {
             if (select) {
-                Messenger.Broadcast(k_Messages.PopupDialog, other.gameObject);
-                //Messenger.MarkAsPermanent(k_Messages.PopupDialog);
+                //                Messenger.Broadcast(k_Messages.PopupDialog, other.gameObject);
+                Dialog.Instance.SelectItem(this.gameObject);
+                EventManager.TriggerEvent(k_Messages.PopupDialog);
             }
         }
 
         if (other.CompareTag("Door")) {
             if (select) {
-                Messenger.Broadcast(k_Messages.DoorDialog);
-                //Messenger.MarkAsPermanent(k_Messages.DoorDialog);
-                //EventManager.TriggerEvent(k_Messages.DoorDialog);
+                EventManager.TriggerEvent(k_Messages.DoorDialog);
             }
         }
     }

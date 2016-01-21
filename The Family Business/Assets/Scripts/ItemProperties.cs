@@ -9,7 +9,7 @@ public class ItemProperties : MonoBehaviour {
     public float risk;
     public float value;
     public float weight;
-    public string name;
+    public float itemName;
 
     void Start() {
         properties = new Dictionary<string, string>();

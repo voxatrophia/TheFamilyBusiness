@@ -23,12 +23,11 @@ public class EndGame : MonoBehaviour {
     }
 
     void BadEnding() {
-        badEnding.gameObject.SetActive(true);        
+        badEnding.gameObject.SetActive(true);
     }
 
     void WorseEnding() {
         worseEnding.gameObject.SetActive(true);
-
     }
 
     public void Exit() {
